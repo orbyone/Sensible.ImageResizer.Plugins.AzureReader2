@@ -7,7 +7,7 @@ The original implementation (https://github.com/imazen/resizer/tree/master/Plugi
 
 An example:
 
-http://<<website>/azure/<container>/filename.jpg?width=120&height=200&mode=crop is persisted to the Azure blob container as http://<account>.blob.core.windows.net/<container>/filename_120x200_crop.jpeg
+http://<<website>>/azure/<<container>>/filename.jpg?width=120&height=200&mode=crop is persisted to the Azure blob container as http://<<account>>.blob.core.windows.net/<<container>>/filename_120x200_crop.jpeg
 
 Only width, height and mode parameters are persisted in the filename in this implementation, but feel free to add more parameters according to your application requirements. 
 
