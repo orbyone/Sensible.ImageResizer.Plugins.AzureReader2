@@ -14,3 +14,10 @@ Only width, height and mode parameters are persisted in the filename in this imp
 See http://imageresizing.net/plugins/azurereader2 for instructions on how to install the plugin.
 
 Note: it is highly recommended to use the lazyExistenceCheck="true" parameter in the web.config plugin declaration. This will result in fewer HTTP requests for the file (just a HEAD request to see if the file exists, and a 302 GET request to the transformed file).
+
+Implementation considerations
+-----------------------------
+
+This implementation is ideal for medium installations with a large number of media assets. DiskCache would certainly be faster, however there are limitations on the disk size allocated to Azure Websites, so Azure blob storage would be a better fit.
+
+For larger installations, a dedicated Azure CDN which points to an Azure Cloud service with ImageResizer installed would provider a faster alternative, also given into account CPU metering for resize operations.
