@@ -20,4 +20,4 @@ Implementation considerations
 
 This implementation is ideal for medium installations with a large number of media assets. DiskCache would certainly be faster, however there are limitations on the disk size allocated to Azure Websites, so Azure blob storage would be a better fit.
 
-For larger installations, a dedicated Azure CDN which points to an Azure Cloud service with ImageResizer installed would provider a faster alternative, also given into account CPU metering for resize operations.
+For larger installations, a dedicated Azure CDN which points to an Azure Cloud service with ImageResizer installed would provider a faster alternative, also taken into account CPU metering for resize operations related to this project.
