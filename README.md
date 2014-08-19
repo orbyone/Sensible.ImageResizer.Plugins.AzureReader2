@@ -1,9 +1,9 @@
-Sensible.ImageResizer.Plugins.AzureReader2
-==========================================
+ImageResizer.Plugins.CachingAzureReader2
+========================================
 
 An ImageResizer plugin for Azure that stores transformed images into Azure blob storage for better performance.
 
-The original implementation (https://github.com/imazen/resizer/tree/master/Plugins/AzureReader2) transforms images on the fly each time they are requested, which can be slow. Sensible.ImageResizer.Plugins.AzureReader2 persists the transformed image in the first request with a vanity path, and subsequent requests are redirected to this copy. 
+The original implementation (https://github.com/imazen/resizer/tree/master/Plugins/AzureReader2) transforms images on the fly each time they are requested, which can be slow. ImageResizer.Plugins.CachingAzureReader2 persists the transformed image in the first request with a vanity path, and subsequent requests are redirected to this copy. 
 
 An example:
 
