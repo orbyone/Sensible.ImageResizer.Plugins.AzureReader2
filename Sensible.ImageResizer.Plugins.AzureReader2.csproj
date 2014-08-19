@@ -8,8 +8,8 @@
     <ProjectGuid>{3A7C958A-626D-43EA-BDAD-42943E192AF8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sensible.ImageResizer.Plugins.AzureReader2</RootNamespace>
-    <AssemblyName>Sensible.ImageResizer.Plugins.AzureReader2</AssemblyName>
+    <RootNamespace>ImageResizer.Plugins.AzureReader2</RootNamespace>
+    <AssemblyName>ImageResizer.Plugins.AzureReader2</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
@@ -33,12 +33,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\dlls\release\Sensible.ImageResizer.Plugins.AzureReader2.xml</DocumentationFile>
+    <DocumentationFile>..\..\dlls\release\ImageResizer.Plugins.AzureReader2.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Trial|AnyCPU'">
     <OutputPath>..\..\dlls\trial\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
-    <DocumentationFile>..\..\dlls\trial\Sensible.ImageResizer.Plugins.AzureReader2.xml</DocumentationFile>
+    <DocumentationFile>..\..\dlls\trial\ImageResizer.Plugins.AzureReader2.xml</DocumentationFile>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
