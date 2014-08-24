@@ -4,6 +4,7 @@ using System.IO;
 using System.Web;
 using System.Web.Hosting;
 using ImageResizer.Configuration;
+using ImageResizer.Util;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 
@@ -31,13 +32,11 @@ namespace ImageResizer.Plugins.AzureReader2
             var mode = context.Request.QueryString["mode"];
             //Parse VirtualFile
             var container = Path.GetDirectoryName(VirtualPath);
-            var filenameWithoutExtension = Path.GetFileNameWithoutExtension(VirtualPath);
             var extension = Path.GetExtension(VirtualPath);
             //Poor man's content type calculator
             var contentType = "image/" + extension.ToLower().Replace(".", "");
             //Create a vanity path according to querystring parameters, that will be persistently stored to Azure blob storage
-            var vanityVirtualPath = string.Format("{0}/{1}_{2}x{3}_{4}{5}",
-                 container, filenameWithoutExtension, width, height, mode, extension);
+            var vanityVirtualPath = container + "/" + new UrlHasher().hash(VirtualPath + "?" + context.Request.QueryString, 0, "/") + extension;
             var vanityFilename = Path.GetFileName(vanityVirtualPath);
             var blobUri = new Uri(string.Format("{0}/{1}", baseUri, vanityVirtualPath));
             try
