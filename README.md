@@ -21,3 +21,7 @@ Implementation considerations
 This implementation is ideal for medium installations with a large number of media assets. DiskCache would certainly be faster, however there are limitations on the disk size allocated to Azure Websites, so Azure blob storage would be a better fit.
 
 For larger installations, a dedicated Azure CDN which points to an Azure Cloud service with ImageResizer installed would provider a faster alternative, also taken into account CPU metering for resize operations related to this project.
+
+Security considarations
+-----------------------
+Since someone could specially craft image urls with various sizes, which could result in Azure running out of space, you should consider only allowing specific parameters and validating input. Since UrlHasher is used in this implementation, you may consider only allowing parameters for your application (e.g. width=120&height=110&mode=crop, and width=50&height=10&mode=pad). One simple way to do this is have an allowed array of Request.Querystring values
